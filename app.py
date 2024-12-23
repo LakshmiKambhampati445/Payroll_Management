@@ -22,11 +22,11 @@ port = os.environ.get('RDS_PORT')
 # port = int(os.environ.get('RDS_PORT'),3306)  # Default to 3306 if PORT is not set
 with mysql.connector.connect(host = host, password = password, db = db, user=user, port=port) as conn:
     cursor = conn.cursor()
-    cursor.execute("CREATE TABLE if not exists admin (email varchar(50) NOT NULL,name varchar(50) NOT NULL,password varchar(50) DEFAULT NULL,passcode varchar(50) DEFAULT NUL)")
+    cursor.execute("CREATE TABLE if not exists admin(email varchar(50) NOT NULL,name varchar(50) NOT NULL,password varchar(50) DEFAULT NULL,passcode varchar(50) DEFAULT NUL)")
     cursor.execute("CREATE TABLE if not exists emp_records(emp_id varchar(20) NOT NULL,username varchar(50) DEFAULT NULL,date date DEFAULT NULL,checkin_time time DEFAULT NULL,checkout_time time DEFAULT NULL,KEY emp_id (emp_id),CONSTRAINT emp_records_ibfk_1 FOREIGN KEY (emp_id) REFERENCES emp_registration(emp_id)")
     cursor.execute("CREATE TABLE if not exists emp_registration(emp_id varchar(20) NOT NULL,firstname varchar(50) DEFAULT NULL,lastname varchar(50) DEFAULT NULL,designation varchar(20) NOT NULL,gender enum('Male','Female','Others') DEFAULT NULL,phone_number bigint DEFAULT NULL,email varchar(50) NOT NULL,password varchar(20) NOT NULL,address text,department varchar(20) NOT NULL,salary int unsigned NOT NULL,PRIMARY KEY (emp_id),UNIQUE KEY email (email))")
     cursor.execute("CREATE TABLE if not exists otp_rec(otp_id int NOT NULL AUTO_INCREMENT,email varchar(50) DEFAULT NULL,otp varchar(10) DEFAULT NULL,PRIMARY KEY (otp_id))")
-    cursor.execute("CREATE TABLE if not exists work_status (emp_id varchar(20) DEFAULT NULL,date datetime DEFAULT CURRENT_TIMESTAMP,workstatus text NOT NULL,KEY emp_id (emp_id),CONSTRAINT work_status_ibfk_1 FOREIGN KEY (emp_id) REFERENCES emp_registration(emp_id)")
+    cursor.execute("CREATE TABLE if not exists work_status(emp_id varchar(20) DEFAULT NULL,date datetime DEFAULT CURRENT_TIMESTAMP,workstatus text NOT NULL,KEY emp_id (emp_id),CONSTRAINT work_status_ibfk_1 FOREIGN KEY (emp_id) REFERENCES emp_registration(emp_id)")
 db = mysql.connector.connect(host = host, user = user, password = password, db = db, port = port)
 
 @app.route('/cd')
