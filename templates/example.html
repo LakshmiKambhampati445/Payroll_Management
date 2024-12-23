@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(0, 0, 255, 0.3);
+            width: 700px;
+            height: auto;
+            margin-left: 20%;
+            margin-top: 6%;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .input-group1{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .input-field {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        input[type="date"] {
+            width: 200px;
+            /* Set a fixed width for the date input */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkin-btn {
+            background-color: #28a745;
+            /* Green color */
+            color: white;
+            width: 120px;
+            /* Reduced width for Check-in button */
+        }
+
+        .checkin-btn:hover {
+            background-color: #218838;
+        }
+
+        .checkout-btn {
+            background-color: #dc3545;
+            /* Red color */
+            color: white;
+            width: 120px;
+        }
+
+        textarea {
+            width: 100%; /* Full width */
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical; /* Vertical resize */
+            margin-bottom: 20px;
+            box-sizing: border-box; /* Box-sizing includes padding in width calculation */
+            max-width: 600px; /* Max width to prevent stretching */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select a Date</h1>
+
+        <!-- Form for Check-in and Check-out -->
+        <form action="{{ url_for('checkin') }}" method="post">
+            <div class="input-group">
+                <label for="date" class="input-label">Date:</label>
+                <input type="date" id="date" name="date" required class="input-field">
+                <button type="submit" class="checkin-btn">Check-in</button>
+                <button type="submit" class="checkout-btn">Check-out</button>
+            </div>
+        </form>
+
+        <!-- Work Status and Submit -->
+        <form action="{{ url_for('submit_work_status') }}" method="post">
+            <div class="input-group1">
+                <label for="workstatus" class="input-label">Work Status:</label>
+                <textarea id="workstatus" name="workstatus" rows="5" cols="50"
+                    placeholder="Enter your work status here..." class="input-field"></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="checkin-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

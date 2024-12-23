@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emp_Login Page</title>
+    <style>
+        .emploginform {
+            /* background: linear-gradient(to right, rgb(116, 216, 223), rgb(170, 197, 136)); Gradient from red to blue */    
+            /* background: linear-gradient(to bottom right, #d4fc79, #96e6a1); Light green to pastel yellow */
+            /* background: linear-gradient(to right, #EAD6EE, #A0F1EA);  */
+            /* background: linear-gradient(70deg, #EAD6EE, #A0F1EA); */
+            background: linear-gradient(120deg, #d0b5d5 48%,#aed7d4 52%);
+            border: 2px solid black; /* Adds a solid black border */
+            border-radius: 5px; /* Rounds the corners */
+            padding: 10px; /* Adds some spacing inside the div */
+            width: 450px; /* Optional: Adjust the width of the div */
+            height: 350px;
+            margin: 20px auto; /* Centers the div horizontally */
+            margin-top: 5%;
+            border:none;
+            background-color: transparent;
+            box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.4); /* Inset shadow */
+            
+        }
+        h1{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        .admin-form {
+          text-align: center;
+        }
+        label{
+            font-size: 18px;
+            margin-left:-52%;
+        }
+        input{
+            padding:7px;
+            border-radius: 10px;
+            border-color: white;
+            width: 300px;
+            transition: all 0.3s ease; /* Smooth transition */
+            box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.4); /* Inset shadow */
+        }
+        input:hover {
+        border-color: #007BFF; /* Change border color */
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Add shadow */
+        background-color: #f0f8ff; /* Optional: Change background */
+        }
+        .emplogin-btn1{
+            padding:7px;
+            background-color: rgb(59, 149, 176);
+            color: white;
+            font-size:17px ;
+            width:130px;
+            border:none;
+            border-radius: 5px;
+            margin-left: 20px;
+            margin-bottom: 2%;
+            margin-top: 4%;
+            text-decoration: none;
+        }
+        .buttons{
+            text-decoration:none;
+            color:white;
+        }
+        .emplogin-btn2{
+            padding:7px;
+            background-color: rgb(59, 149, 176);
+            color: white;
+            font-size:17px ;
+            width:130px;
+            border:none;
+            border-radius: 5px;
+            margin-left: 40px;
+            margin-bottom: 4%;
+        }
+        .flash-message {
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-size: 20px;
+      animation: fadeOut 30s forwards; /* Auto-hide after 30 seconds */
+      color: rgb(86, 125, 196);
+      text-align:center;
+    }
+
+    .flash-message.info {
+      background-color: #f0f8ff;
+      color: #007BFF;
+    }
+
+    .flash-message.success {
+      background-color: #d4edda;
+      color: #ab2588;
+    }
+    .flash-message.error{
+      background-color: #d4edda;
+      color: red;
+    }
+    /* Fade-out animation */
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        display: none;
+      }
+    }
+    </style>
+    <script>
+      // JavaScript function to show alert message for signup
+      function showSignUpAlert() {
+          alert("You have to contact your admin for registration.");
+      }
+      // JavaScript function to show alert message for emp login page
+      function showEmpLoginAlert() {
+          alert("You Have To Contact Your Admin For Login.");
+      }
+  </script>
+</head>
+<body>
+     
+    {% include 'header.html' %}
+     <!-- Display flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <div class="emploginform">
+        <form method="post" class="admin-form" action="{{url_for('emp_login')}}">
+            <h1>Employee Login Page</h1>
+           <div>
+            <label for="email">Email</label><br>
+            <input type="email" placeholder="Enter Your Email" name="email"><br><br>
+           </div>
+           <div>
+            <label for="password">Password</label><br>
+            <input type="password" placeholder="Enter Your Password" name="password"><br><br>
+           </div>
+           <p><a href="{{url_for('forget_password')}}">Forgot Password ?</a></p>
+           <!-- <a href="#"> <button class="button" onclick="showSignUpAlert()">Sign Up</button></a> -->
+           <a href="#" class="button" onclick="showSignUpAlert()">Sign Up</a>
+
+           <div>
+            <!-- <button class="emplogin-btn1" type="submit"><a href="{{url_for('emp_dashboard')}}">Submit</a></button> -->
+             <!-- <button class="emplogin-btn1" type="submit">Submit</button> -->
+             <button class="emplogin-btn1" type="submit">Submit</button>
+           <a href="{{ url_for('home') }}" class = "buttons"> <button class="emplogin-btn2" type="button">Back</button></a>
+           </div>
+        </form>
+    </div>
+    {% include 'footer1.html' %}
+</body>
+</html>

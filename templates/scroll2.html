@@ -1,0 +1,1213 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Details</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #0047ab;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: #003580;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            height: 100vh;
+            background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+        }
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        .about, .services, .testimonials, .contact {
+            background-color: #f9f9f9;
+            margin: 20px 0;
+        }
+        .services .service {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .services .service img {
+            width: 50px;
+            height: 50px;
+        }
+        footer {
+            background-color: #003580;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: #00c3ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our Company</h1>
+    <p>Your success, our commitment!</p>
+</header>
+
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    <h1>We Build Your Future</h1>
+    <p>Discover excellence with us.</p>
+    <button>Learn More</button>
+</div>
+
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are a leading company in innovation and excellence. Our mission is to deliver quality solutions tailored to your needs.</p>
+</section>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service">
+        <img src="https://via.placeholder.com/50" alt="Service 1">
+        <h3>Service 1</h3>
+        <p>High-quality service to meet your requirements.</p>
+    </div>
+    <div class="service">
+        <img src="https://via.placeholder.com/50" alt="Service 2">
+        <h3>Service 2</h3>
+        <p>Innovative solutions that drive results.</p>
+    </div>
+    <div class="service">
+        <img src="https://via.placeholder.com/50" alt="Service 3">
+        <h3>Service 3</h3>
+        <p>Excellence in every project we undertake.</p>
+    </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <p>"Outstanding service and incredible results!"</p>
+    <p>"A trustworthy partner for all our needs."</p>
+    <p>"Highly recommended for anyone seeking quality solutions."</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@company.com</p>
+    <p>Phone: +123 456 7890</p>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <br><br>
+        <input type="email" placeholder="Your Email" required>
+        <br><br>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <br><br>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Our Company. All rights reserved.</p>
+    <p><a href="#">Back to Top</a></p>
+</footer>
+
+</body>
+</html>
+
+<!-- second -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .main-content {
+            padding: 50px 20px;
+            text-align: justify;
+        }
+
+        .main-content h2 {
+            color: #2C3E50;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .image-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Payroll Management System</h1>
+        <p>Your efficient solution for employee salary management</p>
+    </div>
+
+    <div class="main-content">
+        <h2>Welcome to the Payroll System</h2>
+        <div class="content">
+            <p>Managing payroll is a critical task in any organization, and our system offers an intuitive and efficient way to ensure timely and accurate payroll processing. From salary calculations to tax deductions, everything is streamlined for your convenience.</p>
+            <p>Our system allows managers and HR professionals to access detailed payroll records, track employee working hours, and generate payslips effortlessly. In addition to basic payroll management features, we offer advanced functionalities for performance tracking, bonuses, and employee benefits.</p>
+        </div>
+
+        <div class="image-section">
+            <img src="https://via.placeholder.com/600x300" alt="Payroll System">
+        </div>
+
+        <div class="content">
+            <p>With secure data storage and easy-to-use features, our payroll management system ensures compliance with local labor laws and tax regulations. Employees can access their payroll information securely via the employee portal, and managers can generate reports at the click of a button.</p>
+            <p>Additionally, the system supports flexible salary structures, allowing for different payment frequencies and types of deductions. Whether you’re paying full-time employees, part-time workers, or contractors, our system adapts to your needs.</p>
+
+            <div class="image-section">
+                <img src="https://via.placeholder.com/600x300" alt="Employee Payroll Info">
+            </div>
+
+            <p>As part of our commitment to continuous improvement, we regularly update the system to ensure it stays ahead of industry trends and evolving regulations. The payroll system is fully customizable and integrates with other HR tools, making it a one-stop solution for all your payroll needs.</p>
+
+            <p>Start managing your payroll efficiently today and experience the ease of automated salary processing, error-free tax calculations, and secure financial record keeping.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Payroll Management System. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
+
+<!-- SEction 3 -----good looking -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #343a40;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 500;
+            color: #007bff;
+        }
+
+        .section-content {
+            font-size: 1.2em;
+            max-width: 900px;
+            margin: 20px auto;
+            color: #6c757d;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: #007bff;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: #e9ecef;
+            padding: 60px 20px;
+            font-style: italic;
+            color: #495057;
+            font-size: 1.5em;
+            border-left: 5px solid #007bff;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote p {
+            margin: 0;
+        }
+
+        /* Image Section */
+        .image-section img {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-top: 40px;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .section-content {
+                font-size: 1em;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                max-width: 90%;
+                margin-bottom: 30px;
+            }
+
+            .quote {
+                font-size: 1.2em;
+            }
+
+            .footer {
+                font-size: 1em;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Payroll Management System</h1>
+        <p>Streamline your payroll processes with ease and accuracy</p>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="section">
+        <h2 class="section-title">Welcome to the Future of Payroll</h2>
+        <p class="section-content">Our Payroll Management System offers an intuitive, automated solution for businesses of all sizes. By simplifying the payroll process, we help you focus on what matters most—your business and your employees.</p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="section">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Automated Payroll</h3>
+                <p>Seamlessly calculate and disburse salaries, taxes, and bonuses with automation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Employee Management</h3>
+                <p>Manage employee records, attendance, and benefits in a centralized portal.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Tax Compliance</h3>
+                <p>Ensure compliance with the latest tax regulations, with automatic updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote">
+        <p>"A good system can transform your business. Our payroll management system is the perfect tool for efficiency and accuracy." - Company CEO</p>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="section">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-content">Our system is built for simplicity. You only need to input the relevant data once, and our platform takes care of the rest. It tracks employee hours, calculates salaries, and ensures tax compliance—all while providing you with intuitive reports and insights.</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section">
+        <img src="https://via.placeholder.com/1200x600?text=Payroll+System+Dashboard" alt="Payroll System Dashboard">
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="section">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="quote">
+            <p>"This payroll system has saved us hours of work each week, and the accuracy is unmatched. Highly recommend it!" - Happy Client</p>
+        </div>
+        <div class="quote">
+            <p>"An essential tool for our company. We can now focus on growth, knowing our payroll is in great hands." - Satisfied Customer</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Payroll Management. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
+
+<!-- Section 3 Good -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #0066ff, #00b3b3);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section-content {
+            font-size: 1.1em;
+            color: #6c757d;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Key Features Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature-card {
+            background-color: #0066ff;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            transform: scale(0.98);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            font-size: 1.1em;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, #00b3b3, #0066ff);
+            padding: 60px 20px;
+            color: white;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            font-style: italic;
+            color: #007bff;
+            font-size: 1.5em;
+            border-left: 5px solid #007bff;
+            max-width: 900px;
+            margin: 40px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .quote:hover {
+            transform: translateX(10px);
+        }
+
+        /* Image Section */
+        .image-section img {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .section-content {
+                font-size: 1em;
+            }
+
+            .quote {
+                font-size: 1.2em;
+            }
+
+            .footer {
+                font-size: 1em;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Payroll Management System</h1>
+        <p>Automating payroll for efficiency, accuracy, and seamless management</p>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="section">
+        <h2 class="section-title">Welcome to a Smarter Payroll Solution</h2>
+        <p class="section-content">Our Payroll Management System is designed to streamline your payroll processes. With automated calculations, secure data storage, and real-time reporting, we help businesses manage payroll effortlessly and ensure compliance.</p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="section">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Automated Payroll</h3>
+                <p>Reduce manual work and errors by automating your entire payroll process.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-time Calculations</h3>
+                <p>Instant payroll calculations, including taxes and deductions, at the click of a button.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Employee Self-Service</h3>
+                <p>Empower employees with their own portal to view payslips, track benefits, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote">
+        <p>"Our payroll system is built to save you time, ensure accuracy, and improve employee satisfaction." - Payroll Company</p>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What Our Clients Are Saying</h2>
+        <p class="testimonial">"This system has completely transformed how we manage payroll. It's quick, easy, and accurate!" - Client A</p>
+        <p class="testimonial">"We can now manage payroll in minutes instead of hours. Highly recommend this system." - Client B</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section">
+        <img src="https://via.placeholder.com/1200x600?text=Payroll+System+Overview" alt="Payroll System Overview">
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Payroll Management. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
+
+<!-- Section 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payroll Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #0066ff, #00b3b3);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .section-content {
+            font-size: 1.1em;
+            color: #6c757d;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Key Features Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature-card {
+            background-color: #0066ff;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            transform: scale(0.98);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            font-size: 1.1em;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, #00b3b3, #0066ff);
+            padding: 60px 20px;
+            color: white;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Quote Section */
+        .quote {
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            font-style: italic;
+            color: #007bff;
+            font-size: 1.5em;
+            border-left: 5px solid #007bff;
+            max-width: 900px;
+            margin: 40px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .quote:hover {
+            transform: translateX(10px);
+        }
+
+        /* Image Section */
+        .image-section img {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f7f7f7;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .contact h2 {
+            font-size: 2.8em;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact form label {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .contact form button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .section-content {
+                font-size: 1em;
+            }
+
+            .quote {
+                font-size: 1.2em;
+            }
+
+            .footer {
+                font-size: 1em;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Payroll Management System</h1>
+        <p>Manage your employee payroll with ease and precision.</p>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="section about-us">
+        <h2 class="section-title">About Us</h2>
+        <div class="section-content">
+            <p>Our Payroll Management System helps businesses streamline payroll processing with accuracy and compliance. Our mission is to provide an easy-to-use solution that saves time and eliminates human errors.</p>
+        </div>
+        <img src="https://via.placeholder.com/800x400" alt="About Us">
+    </div>
+
+    <!-- Key Features Section -->
+    <div class="section features">
+        <div class="feature-card">
+            <h3>Automated Payroll</h3>
+            <p>Our system calculates pay based on work hours and tax regulations automatically.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Compliance</h3>
+            <p>Ensures your payroll complies with the latest tax laws and regulations.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Easy Integration</h3>
+            <p>Integrates seamlessly with accounting and HR systems.</p>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="section testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">"This system saved us countless hours each month. We are now confident that our payroll is always accurate!"</div>
+        <div class="testimonial">"Simple, effective, and easy to use. It’s everything we needed for payroll management!"</div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote">
+        "Efficiency and accuracy are the keys to payroll management. Our system provides both."
+    </div>
+
+    <!-- Image Section -->
+    <div class="section image-section">
+        <img src="https://via.placeholder.com/1200x600" alt="Payroll Management">
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="section contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or need a demo? Reach out to our team, and we'll be happy to assist you in getting started with our Payroll Management System.</p>
+        <form action="#">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Payroll Management System | All rights reserved</p>
+    </div>
+</body>
+</html>

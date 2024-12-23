@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Actions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            margin-top: 5%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .empsignup,.emplist{
+            text-decoration: none;
+            color:white;
+        }
+        .adminheadertag{
+            color:red;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="button-container">
+       <a href="{{url_for('emp_signup')}}" class="empsignup"><button class="button">Employee Signup</button></a>
+        <a href="{{url_for('emp_list')}}" class="emplist"><button class="button">Emp List</button></a>
+    </div>
+    <h1 class="adminheadertag">Welcome To The Admin Dashboard.</h1>
+    {% include 'footer1.html' %}
+</body>
+</html>
