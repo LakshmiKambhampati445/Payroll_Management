@@ -22,11 +22,11 @@ port = os.environ.get('RDS_PORT')
 # port = int(os.environ.get('RDS_PORT'),3306)  # Default to 3306 if PORT is not set
 with mysql.connector.connect(host = host, password = password, db = db, user=user, port=port) as conn:
     cursor = conn.cursor()
-    cursor.execute("CREATE TABLE if not exists admin(email varchar(50) NOT NULL,name varchar(50) NOT NULL,password varchar(50) DEFAULT NULL,passcode varchar(50) DEFAULT NUL)")
-    cursor.execute("CREATE TABLE if not exists emp_records(emp_id varchar(20) NOT NULL,username varchar(50) DEFAULT NULL,date date DEFAULT NULL,checkin_time time DEFAULT NULL,checkout_time time DEFAULT NULL,KEY emp_id (emp_id),CONSTRAINT emp_records_ibfk_1 FOREIGN KEY (emp_id) REFERENCES emp_registration(emp_id)")
+    # cursor.execute("CREATE TABLE if not exists admin(email varchar(50) NOT NULL,name varchar(50) NOT NULL,password varchar(50) DEFAULT NULL,passcode varchar(50) DEFAULT NUL)")
+    cursor.execute("CREATE TABLE if not exists emp_records(emp_id varchar(20) NOT NULL,username varchar(50) DEFAULT NULL,date date DEFAULT NULL,checkin_time time DEFAULT NULL,checkout_time time DEFAULT NULL,KEY emp_id(emp_id),CONSTRAINT emp_records_ibfk_1 FOREIGN KEY(emp_id) REFERENCES emp_registration(emp_id))")
     cursor.execute("CREATE TABLE if not exists emp_registration(emp_id varchar(20) NOT NULL,firstname varchar(50) DEFAULT NULL,lastname varchar(50) DEFAULT NULL,designation varchar(20) NOT NULL,gender enum('Male','Female','Others') DEFAULT NULL,phone_number bigint DEFAULT NULL,email varchar(50) NOT NULL,password varchar(20) NOT NULL,address text,department varchar(20) NOT NULL,salary int unsigned NOT NULL,PRIMARY KEY (emp_id),UNIQUE KEY email (email))")
     cursor.execute("CREATE TABLE if not exists otp_rec(otp_id int NOT NULL AUTO_INCREMENT,email varchar(50) DEFAULT NULL,otp varchar(10) DEFAULT NULL,PRIMARY KEY (otp_id))")
-    cursor.execute("CREATE TABLE if not exists work_status(emp_id varchar(20) DEFAULT NULL,date datetime DEFAULT CURRENT_TIMESTAMP,workstatus text NOT NULL,KEY emp_id (emp_id),CONSTRAINT work_status_ibfk_1 FOREIGN KEY (emp_id) REFERENCES emp_registration(emp_id)")
+    cursor.execute("CREATE TABLE if not exists work_status(emp_id varchar(20) DEFAULT NULL,date datetime DEFAULT CURRENT_TIMESTAMP,workstatus text NOT NULL,KEY emp_id (emp_id),CONSTRAINT work_status_ibfk_1 FOREIGN KEY (emp_id) REFERENCES emp_registration(emp_id))")
 db = mysql.connector.connect(host = host, user = user, password = password, db = db, port = port)
 
 @app.route('/cd')
@@ -41,34 +41,42 @@ def admin_login():
         password = request.form.get('password')
         passcode = request.form.get('passcode')
 
-        # Validate form input
-        if not email or not password or not passcode:
-            flash("All fields (Email, Password, and Passcode) are required.", "error")
-            return render_template('admin_login.html')  # Show the form again with the error
-
-        # Check if the email exists in the admin table
-        cursor = db.cursor(dictionary=True) 
-        cursor.execute("SELECT * FROM admin WHERE email = %s", (email,))
-        admin_record = cursor.fetchone()
-        cursor.close()
-
-        if admin_record:
-            # Email exists, now validate password and passcode
-            if admin_record['password'] == password and admin_record['passcode'] == passcode:
-                # Valid credentials
-                return redirect(url_for('admin_dashboard'))
-            else:
-                # Invalid password or passcode
-                flash("Invalid password or passcode. Please try again.", "error")
+        print('email:',email,'password:',password,'passcode:',passcode)
+        if email == 'lakshmikambhampati445@gmail.com' and password == 'lakshmi@1234' and passcode == '@15445':
+            return redirect(url_for('admin_dashboard'))
         else:
-            # Email does not exist
-            flash("Invalid email. Please enter a valid email.", "error")
-
-        # If invalid, render the login form again with a flash message
+            flash('Invalid Credentials, Please Try Again.')
+            return redirect(url_for('admin_login'))
         return render_template('admin_login.html')
 
-    # Render the admin login form for GET requests
-    return render_template('admin_login.html')
+        # Validate form input
+    #     if not email or not password or not passcode:
+    #         flash("All fields (Email, Password, and Passcode) are required.", "error")
+    #         return render_template('admin_login.html')  # Show the form again with the error
+
+    #     # Check if the email exists in the admin table
+    #     cursor = db.cursor(dictionary=True) 
+    #     cursor.execute("SELECT * FROM admin WHERE email = %s", (email,))
+    #     admin_record = cursor.fetchone()
+    #     cursor.close()
+
+    #     if admin_record:
+    #         # Email exists, now validate password and passcode
+    #         if admin_record['password'] == password and admin_record['passcode'] == passcode:
+    #             # Valid credentials
+    #             return redirect(url_for('admin_dashboard'))
+    #         else:
+    #             # Invalid password or passcode
+    #             flash("Invalid password or passcode. Please try again.", "error")
+    #     else:
+    #         # Email does not exist
+    #         flash("Invalid email. Please enter a valid email.", "error")
+
+    #     # If invalid, render the login form again with a flash message
+    #     return render_template('admin_login.html')
+
+    # # Render the admin login form for GET requests
+    # return render_template('admin_login.html')
 
 @app.route('/cd/admin_dashboard')
 def admin_dashboard():
@@ -165,6 +173,7 @@ def search():
             search_query = "SELECT emp_id, firstname,lastname, designation, email, department FROM emp_registration WHERE emp_id LIKE %s OR firstname LIKE %s OR lastname LIKE %s OR designation LIKE %s OR email LIKE %s OR department LIKE %s"
             cursor.execute(search_query, (f"%{query}%", f"%{query}%",f"%{query}%",f"%{query}%",f"%{query}%", f"%{query}%"))
             results = cursor.fetchall()  # Fetch all matching rows
+            cursor.close()
     # else:
     #     results = []  # Empty list for no results or no query
 
@@ -213,6 +222,7 @@ def emp_login():
                 else:
                     # Invalid password 
                     flash("Invalid password. Please try again.", "error")
+                    return Redirect(url_for('emp_login'))
             else:
                 # Email does not exist
                 # flash("Invalid email. Please enter a valid email.", "error")
@@ -413,49 +423,6 @@ def checkout():
         flash('You Are Not Logged In')
         return redirect(url_for('emp_login'))# Redirect to login if session does not exist
 
-# @app.route('/cd/checkout_details/<emp_id>')
-# def checkout_details(emp_id):
-#     if 'email' not in session:
-#         flash("You need to be logged in to submit work status.")
-#         return redirect(url_for('emp_login'))  # Redirect to login page if not logged in
-#     else:
-#         email = session.get('email')
-#         # cursor = db.cursor(buffered=True)
-#         # cursor.execute('select emp_id from emp_registration where email = %s',(email,))
-#         # emp_id = cursor.fetchone()[0]
-
-#         # today = date.today().strftime('%Y-%m-%d')  # Get today's date in 'YYYY-MM-DD' format
-#         cursor.execute('SELECT * FROM emp_records WHERE emp_id = %s AND date = CURDATE()', (emp_id,))
-#         checkin_record = cursor.fetchall()[0]
-        
-#         if not checkin_record:
-#             flash("You must check in first before submitting your work status.",'error')
-#             return redirect(url_for('emp_dashboard'))  # Redirect to dashboard if no check-in today
-#         else:
-#             flash('Check Out Successful.')   
-#             return render_template('checkout_details.html',checkin_record)
-
-#Second Checkout Details - 2
-# @app.route('/cd/checkout_details/<emp_id>')
-# def checkout_details(emp_id):
-#     if 'email' in session:
-#         email = session.get('email')
-#         print(emp_id)
-#         cursor = db.cursor(buffered=True)
-#         cursor.execute('select * from emp_records where emp_id = %s and date = CURDATE()',(emp_id,))
-#         checkin_data = cursor.fetchall()[0]
-#         cursor.close()
-#         print("checkin_data:",checkin_data[0])
-#         if checkin_data:
-#             # Render the template with the check-in details
-#             return render_template('checkout_details.html', checkin_data = checkin_data )                           
-#         else:
-#             flash('No check-in records found', 'error')
-#             return redirect(url_for('emp_dashboard'))  # If no check-in found
-#     else:
-#         flash('User not found', 'error')
-#         return redirect(url_for('emp_login'))  # If user not 
-
 #Third Checked Out Details - 3
 # from datetime import datetime
 @app.route('/cd/checkout_details/<emp_id>')
@@ -642,29 +609,7 @@ def salary_details(emp_id):
     return render_template('salary_details.html',emp_data=[{'emp_id': emp_id, 'username': username}],company_working_days=company_working_days, num_working_days=num_working_days, total_salary=round(total_salary, 2))
     # return render_template('salary_details.html',emp_data[emp_id,username,company_working_days,num_working_days,total_salary])
 
-# def salary_details(emp_id):
-#     print(emp_id)
-#     cursor = db.cursor(buffered=True)
-#     cursor.execute('select * from emp_records where emp_id = %s',(emp_id,))
-#     emp_data = cursor.fetchall()
-#     cursor.close()
-#     print(emp_data)
-#      # Check if no records are found
-#     if not emp_data:
-#         # message = "User has not checked in yet."
-#         cursor = db.cursor(buffered=True)
-#         cursor.execute('select firstname, lastname, salary from emp_registration where emp_id = %s',(emp_id,))
-#         data = cursor.fetchone()
-#         username = f'{data[0]} {data[1]}'
-#         print(username)
-#         cursor.close()
-#         # view_data = [{'emp_id': emp_id, 'username':username , 'date': 'Not Checkin', 'checkin_time': 'Not Checked In', 'checkout_time': 'Not Checked Out'}]
-#         emp_data = [(emp_id, username, 'Not Check In', 'Not Checked In', 'Not Checked Out')] 
-#         print(emp_data)
-#         return render_template('salary_details.html',emp_data = emp_data)
-#     return render_template('salary_details.html',emp_data = emp_data)
-
-#     return render_template('salary_details.html')
+render_template('salary_details.html')
 
 @app.route('/cd/logout')
 def logout():
