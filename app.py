@@ -618,9 +618,5 @@ def logout():
     flash('Logged Out Successfully.','success')
     return redirect(url_for('home'))  # Redirect to the login page
 
-@app.route('/cd/scroll')
-def scroll():
-    return render_template('scroll.html')
-    
 if __name__ == "__main__":
     app.run()
